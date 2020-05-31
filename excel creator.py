@@ -1,18 +1,17 @@
-
-
 import csv
 from datetime import datetime, timedelta
 x = datetime(2020, 6, 1)
-#print(x.strftime("%B")) %d %m %Y
+#do not change this
 days=['mon','tue','wed','thur','fri','sat']
 huge_list=[]
+#do not change this
 huge_list.append(['Subject','Start Date','Start Time','End Date','End Time','All Day Event' ,'Description', 'Location','Private'])
 k=1
 
 for i in days:# loop days
     
     for j in range(0,4):# loop hour
-        #print "Enter number : 1.CONA 2.FLAT 3.DAA 4.IAWP 5.SE 6.IOT"
+        #Change the subject names
         opt=input("Enter the "+str(j+1)+ " hour on "+i+":")
         if opt==1:
             sub="Computer Oriented Numerical Analysis"
@@ -28,15 +27,12 @@ for i in days:# loop days
             sub="Internet and Web Programming"
         if j==3 and i=='mon':
             j+=2
-        #+("am" if str(09+j)<12 else "pm")
-        for o in range(6):
+        for o in range(6): #change the number of weeks here
             huge_list.append([sub,x.strftime("%d")+"-"+x.strftime("%m")+"-"+x.strftime("%Y"),str(9+j)+":00 ",sub,x.strftime("%d")+"-"+x.strftime("%m")+"-"+x.strftime("%Y"),str(10+j)+":00 ","FALSE","Online class","","FALSE"])
             x=x+timedelta(7)
         x=x-timedelta(42)
     k+=1
     x = datetime(2020, 6,k)
-    #k+=1
-#def updatethelist():
     
 print huge_list
 
