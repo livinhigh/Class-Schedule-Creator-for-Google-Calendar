@@ -1,5 +1,6 @@
 import csv
 from datetime import datetime, timedelta
+#Change the starting date here
 x = datetime(2020, 6, 1)
 #do not change this
 days=['mon','tue','wed','thur','fri','sat']
@@ -28,7 +29,7 @@ for i in days:# loop days
         if j==3 and i=='mon':
             j+=2
         for o in range(6): #change the number of weeks here
-            huge_list.append([sub,x.strftime("%d")+"-"+x.strftime("%m")+"-"+x.strftime("%Y"),str(9+j)+":00 ",sub,x.strftime("%d")+"-"+x.strftime("%m")+"-"+x.strftime("%Y"),str(10+j)+":00 ","FALSE","Online class","","FALSE"])
+            huge_list.append([sub,x.strftime("%d")+"-"+x.strftime("%m")+"-"+x.strftime("%Y"),str(9+j)+":00 ",x.strftime("%d")+"-"+x.strftime("%m")+"-"+x.strftime("%Y"),str(10+j)+":00 ","FALSE","Online class","","FALSE"])
             x=x+timedelta(7)
         x=x-timedelta(42)
     k+=1
